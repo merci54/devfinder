@@ -7,7 +7,7 @@ export default function Header() {
       <Container>
         <h2 className={css.title}>devfinder</h2>
         <button className={css.themeSwitch}>
-          <span className={`text-preset-8 ${css.theme}`}>LIGHT</span>
+          <span className={css.theme}>LIGHT</span>
           <img className={css.icon} src="/icons/sun.svg" alt="sun icon" />
         </button>
       </Container>
