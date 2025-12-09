@@ -1,0 +1,110 @@
+:root {
+  --neutral-900: #141d2f;
+  --neutral-800: #1e2a47;
+  --neutral-700: #2b3442;
+  --neutral-500: #4b6a9b;
+  --neutral-300: #697c9a;
+  --neutral-200: #90a4d4;
+  --neutral-100: #f6f8ff;
+  --neutral-0: #ffffff;
+
+  --blue-300: #60abff;
+  --blue-500: #0079ff;
+
+  --red-500: #f74646;
+}
+
+.text-preset-1 {
+  font-size: 26px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+.text-preset-2 {
+  font-size: 22px;
+  line-height: 140%;
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+.text-preset-3 {
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0px;
+  font-weight: normal;
+}
+.text-preset-3-mobile {
+  font-size: 13px;
+  line-height: 140%;
+  letter-spacing: 0px;
+  font-weight: normal;
+}
+.text-preset-4 {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-weight: normal;
+}
+.text-preset-5 {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+.text-preset-6 {
+  font-size: 15px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-weight: normal;
+}
+.text-preset-7 {
+  font-size: 13px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-weight: normal;
+}
+.text-preset-8 {
+  font-size: 13px;
+  line-height: 140%;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+}
+
+img {
+  display: flex;
+  max-width: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--neutral-900);
+  color: var(--neutral-0);
+  font-family: "Space Mono", monospace;
+
+  padding-top: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding-top: 40px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  body {
+    padding-top: 130px;
+  }
+}
