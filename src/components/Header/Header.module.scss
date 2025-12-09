@@ -1,3 +1,7 @@
+.header {
+  margin-bottom: 32px;
+}
+
 .header > div {
   display: flex;
   justify-content: space-between;
@@ -11,6 +15,8 @@
 }
 
 .themeSwitch {
+  background: none;
+
   display: flex;
   align-items: center;
   gap: 12px;

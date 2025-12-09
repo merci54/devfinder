@@ -1,15 +1,13 @@
-import Container from "../Container/Container";
 import Header from "../Header/Header";
-import css from "./App.module.css";
+import SearchForm from "../SearchForm/SearchForm";
+import css from "./App.module.scss";
 
 function App() {
   return (
     <>
       <Header />
       <main className={css.main}>
-        <Container>
-          <h2>Main</h2>
-        </Container>
+        <SearchForm />
       </main>
     </>
   );

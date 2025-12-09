@@ -1,0 +1,59 @@
+:root {
+  --neutral-900: #141d2f;
+  --neutral-800: #1e2a47;
+  --neutral-700: #2b3442;
+  --neutral-500: #4b6a9b;
+  --neutral-300: #697c9a;
+  --neutral-200: #90a4d4;
+  --neutral-100: #f6f8ff;
+  --neutral-0: #ffffff;
+
+  --blue-300: #60abff;
+  --blue-500: #0079ff;
+
+  --red-500: #f74646;
+}
+
+img {
+  display: flex;
+  max-width: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--neutral-900);
+  color: var(--neutral-0);
+  font-family: "Space Mono", monospace;
+
+  padding-top: 32px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 40px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-top: 130px;
+  }
+}
