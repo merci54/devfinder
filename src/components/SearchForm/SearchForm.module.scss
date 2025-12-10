@@ -80,3 +80,18 @@
     left: 24px;
   }
 }
+
+.error {
+  position: absolute;
+  display: none;
+  right: 143px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include text-preset-5;
+  color: var(--red-500);
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}

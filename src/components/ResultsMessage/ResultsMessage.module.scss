@@ -1,0 +1,19 @@
+@use "../../typography.scss" as *;
+
+.wrapper {
+  padding: 48px;
+  background-color: var(--neutral-800);
+  border-radius: 16px;
+
+  text-align: center;
+}
+
+.title {
+  @include text-preset-2;
+  margin-bottom: 16px;
+}
+
+.text {
+  @include text-preset-6;
+  color: var(--neutral-200);
+}

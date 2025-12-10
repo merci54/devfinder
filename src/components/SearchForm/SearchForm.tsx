@@ -1,25 +1,26 @@
-import { useState } from "react";
 import Container from "../Container/Container";
 import css from "./SearchForm.module.scss";
 import { getUser } from "../../services/searcherApi";
 import { useUserStore } from "../../services/userStore";
+import type { AxiosError } from "axios";
 
 export default function SearchForm() {
-  const [isLoading, setIsLoading] = useState(false);
   const { setUser } = useUserStore();
+  const error = useUserStore((state) => state.error);
+  const setError = useUserStore((state) => state.setError);
   const searchUser = async (formData: FormData) => {
     try {
-      setIsLoading(true);
-      await new Promise((e) => setTimeout(e, 2000));
-      const username = formData.get("username");
-      if (typeof username === "string" && username.length >= 3) {
-        const data = await getUser(username);
+      const username = formData.get("username") as string;
+      if (username && username.length >= 1) {
+        const data = await getUser(username.trim());
         setUser(data);
       }
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setIsLoading(false);
+    } catch (error) {
+      const err = error as AxiosError;
+
+      if (err.response?.status === 404) {
+        setError("No results");
+      }
     }
   };
   return (
@@ -39,11 +40,12 @@ export default function SearchForm() {
               type="text"
             />
             <button className={css.submitBtn} type="submit">
-              {isLoading ? "Searching..." : "Search"}
+              Search
             </button>
           </form>
 
           <img className={css.icon} src="/icons/search.svg" alt="search icon" />
+          {error && <span className={css.error}>{error}</span>}
         </div>
       </Container>
     </div>

@@ -26,14 +26,35 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  border-radius: 4px;
 
   @media screen and (min-width: 768px) {
     gap: 16px;
+  }
+
+  &:focus {
+    outline: 2px solid var(--blue-500);
+    outline-offset: 3px;
   }
 }
 
 .theme {
   color: var(--neutral-200);
+  transition: 0.2s ease;
 
   @include text-preset-8;
+}
+
+.icon {
+  fill: var(--neutral-200);
+  transition: 0.2s ease;
+}
+
+.themeSwitch:hover {
+  .theme {
+    color: var(--neutral-0);
+  }
+  .icon {
+    fill: var(--neutral-0);
+  }
 }

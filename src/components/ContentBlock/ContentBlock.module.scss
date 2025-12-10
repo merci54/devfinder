@@ -31,23 +31,26 @@
 
 .imgBlock {
   grid-area: img;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
 
   @media (min-width: 768px) {
     margin-left: 21px;
+    width: 117px;
+    height: 117px;
   }
+
   @media (min-width: 1440px) {
     margin-left: 0;
   }
 }
 
 .img {
-  width: 70px;
-  height: 70px;
-
-  @media (min-width: 768px) {
-    width: 117px;
-    height: 117px;
-  }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .header {
@@ -150,5 +153,8 @@
 
   &__value {
     @include text-preset-6;
+  }
+  &__link:hover {
+    text-decoration: underline;
   }
 }

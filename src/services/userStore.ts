@@ -3,17 +3,19 @@ import type { User } from "./user";
 import { persist } from "zustand/middleware";
 
 type UserStore = {
-  user: User;
-  setUser: (newUser: User) => void;
+  user: User | null;
+  error: string | null;
+  setUser: (newUser: User | null) => void;
+  setError: (msg: string | null) => void;
 };
 
 const defaultValues: User = {
   login: "octocat",
   id: 1,
-  avatar_url: "https://github.com/images/error/octocat_happy.gif",
+  avatar_url: "/icons/user-img.png",
   url: "https://api.github.com/users/octocat",
   html_url: "https://github.com/octocat",
-  name: "monalisa octocat",
+  name: "The Octocat",
   company: "GitHub",
   location: "San Francisco",
   email: "octocat@github.com",
@@ -30,7 +32,9 @@ export const useUserStore = create<UserStore>()(
   persist(
     (set) => ({
       user: defaultValues,
-      setUser: (newUser) => set({ user: newUser }),
+      error: null,
+      setUser: (newUser) => set({ user: newUser, error: null }),
+      setError: (msg) => set({ error: msg }),
     }),
     { name: "user-storage" }
   )
