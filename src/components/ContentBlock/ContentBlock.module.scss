@@ -4,63 +4,118 @@
   padding: 32px 24px;
   border-radius: 16px;
   background-color: var(--neutral-800);
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-template-areas:
+    "img header"
+    "bio bio"
+    "stats stats"
+    "links links";
+  gap: 24px 20px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  @media (min-width: 768px) {
+    padding: 48px 27px;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "img header"
+      "img bio"
+      "img stats"
+      "img links";
+    gap: 24px 32px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 48px 53px 48px 48px;
+  }
+}
+
+.imgBlock {
+  grid-area: img;
+
+  @media (min-width: 768px) {
+    margin-left: 21px;
+  }
+  @media (min-width: 1440px) {
+    margin-left: 0;
+  }
+}
+
+.img {
+  width: 70px;
+  height: 70px;
+
+  @media (min-width: 768px) {
+    width: 117px;
+    height: 117px;
+  }
 }
 
 .header {
-  display: flex;
-  gap: 20px;
-  align-items: start;
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "title"
+    "username"
+    "date";
+  row-gap: 2px;
 
-  &__img {
-    width: 70px;
-    height: 70px;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "title date"
+      "username username";
+    row-gap: 4px;
   }
 
   &__title {
+    grid-area: title;
     margin-bottom: 2px;
     @include text-preset-1;
   }
 
   &__username {
-    margin-bottom: 4px;
+    grid-area: username;
     color: var(--blue-300);
     @include text-preset-4;
   }
 
   &__date {
+    grid-area: date;
     @include text-preset-6;
   }
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-
-  &__bio {
-    @include text-preset-6;
-  }
+.bio {
+  grid-area: bio;
+  @include text-preset-6;
 }
 
 .stats {
+  grid-area: stats;
   background-color: var(--neutral-900);
   border-radius: 10px;
   padding: 16px;
+
+  @media (min-width: 768px) {
+    padding: 15px 32px;
+  }
 
   &__list {
     display: flex;
     flex-direction: column;
     gap: 16px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    flex: 1;
   }
 }
 
@@ -73,13 +128,24 @@
 }
 
 .linksList {
+  grid-area: links;
   display: flex;
   flex-direction: column;
   gap: 16px;
 
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   &__item {
     display: flex;
     gap: 16px;
+    min-width: auto;
+
+    @media (min-width: 768px) {
+      min-width: 232px;
+    }
   }
 
   &__value {
