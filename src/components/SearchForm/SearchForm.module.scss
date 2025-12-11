@@ -33,6 +33,7 @@
 
 .input::placeholder {
   color: var(--subtext-color);
+  transition: color 0.2s ease;
   opacity: 70%;
 }
 
