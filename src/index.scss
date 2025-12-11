@@ -13,7 +13,7 @@
 
   --red-500: #f74646;
 
-  &[data-theme="dark"] {
+  &.dark {
     --bg: var(--neutral-900);
     --bg-block: var(--neutral-800);
     --text-color: var(--neutral-0);
@@ -26,7 +26,7 @@
     --themeswitch-color-hover: var(--neutral-0);
   }
 
-  &[data-theme="light"] {
+  &.light {
     --bg: var(--neutral-100);
     --bg-block: var(--neutral-0);
     --text-color: var(--neutral-700);
