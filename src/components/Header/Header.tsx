@@ -1,13 +1,16 @@
+import { useThemeStore } from "../../lib/stores/themeStore";
 import Container from "../Container/Container";
 import css from "./Header.module.scss";
 
 export default function Header() {
+  const theme = useThemeStore((state) => state.theme);
+  const toggleTheme = useThemeStore((state) => state.toggleTheme);
   return (
     <header className={css.header}>
       <Container>
         <h2 className={css.title}>devfinder</h2>
-        <button className={css.themeSwitch}>
-          <span className={css.theme}>LIGHT</span>
+        <button onClick={toggleTheme} className={css.themeSwitch}>
+          <span className={css.theme}>{theme.toUpperCase()}</span>
           <svg
             className={css.icon}
             width="20"

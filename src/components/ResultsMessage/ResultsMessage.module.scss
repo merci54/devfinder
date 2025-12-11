@@ -2,18 +2,21 @@
 
 .wrapper {
   padding: 48px;
-  background-color: var(--neutral-800);
+  background-color: var(--bg-block);
   border-radius: 16px;
 
   text-align: center;
+
+  box-shadow: var(--block-shadow);
 }
 
 .title {
   @include text-preset-2;
   margin-bottom: 16px;
+  color: var(--text-color);
 }
 
 .text {
   @include text-preset-6;
-  color: var(--neutral-200);
+  color: var(--errortext-color);
 }

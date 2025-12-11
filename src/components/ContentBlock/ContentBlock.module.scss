@@ -3,7 +3,7 @@
 .wrapper {
   padding: 32px 24px;
   border-radius: 16px;
-  background-color: var(--neutral-800);
+  background-color: var(--bg-block);
   display: grid;
   grid-template-columns: 70px 1fr;
   grid-template-areas:
@@ -12,6 +12,8 @@
     "stats stats"
     "links links";
   gap: 24px 20px;
+
+  box-shadow: var(--block-shadow);
 
   @media (min-width: 768px) {
     padding: 48px 27px;
@@ -79,24 +81,27 @@
 
   &__username {
     grid-area: username;
-    color: var(--blue-300);
+    color: var(--username-color);
     @include text-preset-4;
   }
 
   &__date {
+    color: var(--subtext-color);
     grid-area: date;
     @include text-preset-6;
   }
 }
 
 .bio {
+  color: var(--subtext-color);
+  opacity: 75%;
   grid-area: bio;
   @include text-preset-6;
 }
 
 .stats {
   grid-area: stats;
-  background-color: var(--neutral-900);
+  background-color: var(--bg);
   border-radius: 10px;
   padding: 16px;
 
@@ -124,6 +129,7 @@
 
 .key {
   @include text-preset-7;
+  color: var(--subtext-color);
 }
 
 .value {
@@ -151,8 +157,13 @@
     }
   }
 
+  &__icon {
+    fill: var(--icon-color);
+  }
+
   &__value {
     @include text-preset-6;
+    color: var(--subtext-color);
   }
   &__link:hover {
     text-decoration: underline;

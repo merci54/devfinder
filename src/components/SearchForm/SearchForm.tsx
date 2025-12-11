@@ -1,7 +1,7 @@
 import Container from "../Container/Container";
 import css from "./SearchForm.module.scss";
-import { getUser } from "../../services/searcherApi";
-import { useUserStore } from "../../services/userStore";
+import { getUser } from "../../lib/api/searcherApi";
+import { useUserStore } from "../../lib/stores/userStore";
 import type { AxiosError } from "axios";
 
 export default function SearchForm() {

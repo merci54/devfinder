@@ -39,22 +39,22 @@
 }
 
 .theme {
-  color: var(--neutral-200);
+  color: var(--themeswitch-color);
   transition: 0.2s ease;
 
   @include text-preset-8;
 }
 
 .icon {
-  fill: var(--neutral-200);
+  fill: var(--themeswitch-color);
   transition: 0.2s ease;
 }
 
 .themeSwitch:hover {
   .theme {
-    color: var(--neutral-0);
+    color: var(--themeswitch-color-hover);
   }
   .icon {
-    fill: var(--neutral-0);
+    fill: var(--themeswitch-color-hover);
   }
 }
