@@ -1,18 +1,15 @@
 export interface User {
-  login: string;
-  id: number;
+  login: string | null;
   avatar_url: string;
-  url: string;
   html_url: string;
-  name: string;
-  company: string;
-  location: string;
-  email: string;
-  bio: string;
-  twitter_username: string;
+  name: string | null;
+  company: string | null;
+  location: string | null;
+  bio: string | null;
+  twitter_username: string | null;
   public_repos: number;
   public_gists: number;
   followers: number;
   following: number;
-  created_at: string;
+  created_at: string | null;
 }

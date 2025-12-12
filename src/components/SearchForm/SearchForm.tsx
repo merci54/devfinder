@@ -3,6 +3,7 @@ import css from "./SearchForm.module.scss";
 import { getUser } from "../../lib/api/searcherApi";
 import { useUserStore } from "../../lib/stores/userStore";
 import type { AxiosError } from "axios";
+// import { validateUser } from "../../lib/validateUser";
 
 export default function SearchForm() {
   const { setUser } = useUserStore();
@@ -13,6 +14,8 @@ export default function SearchForm() {
       const username = formData.get("username") as string;
       if (username && username.length >= 1) {
         const data = await getUser(username.trim());
+
+        // const validatedData = validateUser(data);
         setUser(data);
       }
     } catch (error) {

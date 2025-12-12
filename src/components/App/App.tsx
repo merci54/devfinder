@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
 import css from "./App.module.scss";
 import { useThemeStore } from "../../lib/stores/themeStore";
+import { validateUser } from "../../lib/validateUser";
 
 function App() {
   const theme = useThemeStore((state) => state.theme);
@@ -13,6 +14,8 @@ function App() {
 
     root.classList.remove("light", "dark");
     root.classList.add(theme);
+
+    validateUser();
   }, [theme]);
   return (
     <>
